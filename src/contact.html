@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include('./_contact-us-head.html', {
+        "path": ".",
+        "title": "INDEX",
+        "description": "META information",
+        "keywords": "META keywords"
+    })
+</head>
+
+<body class="contact-us">
+
+    <div class="page-wrapper">
+
+        @@include('./_common-navigation.html', {
+            "path": "."
+        })
+
+
+        @@include('./_contact-us-content.html', {
+            "path": "."
+        })
+
+        @@include('./_common-footer.html', {
+            "path": "."
+        })        
+
+    </div>
+
+    <!-- Scroll Top -->
+    <a id="scroll-top" href="#top" title="Top" role="button" class="scroll-top"><i class="d-icon-arrow-up"></i></a>
+
+    @@include('./_common-navigation-mobile.html', { 
+        "path": "."
+    })
+
+    @@include('./_contact-us-scripts.html', {
+        "path": "."
+    })
+
+</body>
+
+</html>
