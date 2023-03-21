@@ -1,0 +1,11 @@
+.feature-images>.feature1:after {
+    content: "Outdoor" !important;
+}
+
+.feature-images>.feature2:after {
+    content: "Publicitate" !important;
+}
+
+.feature-images>.feature3:after {
+    content: "Media" !important;
+}
