@@ -8,6 +8,65 @@
 <script src="https://maps.googleapis.com/maps/api/js?key="></script>
 <script>
 
+    // Show an element
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+
+    // Hide an element
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+
+    var toggle = function (elem) {
+
+        // If the element is visible, hide it
+        if (window.getComputedStyle(elem).display === 'block') {
+            hide(elem);
+            return;
+        }
+
+        // Otherwise, show it
+        show(elem);
+
+    };
+
+    window.onload = function() {
+
+        let contact_form   = document.getElementById('contact-form'   );
+        let contact_status = document.getElementById('contact-status' );
+        let contact_button = document.getElementById('contact-button' );
+
+        if ( contact_form ) {
+            contact_form.addEventListener('submit', function(event) {
+
+            event.preventDefault();
+
+            contact_button.disabled = true;
+            emailjs.sendForm('service_ozenqks', 'template_2sv8ryn776', this)
+                .then(function() {
+                    console.log('SUCCESS!');
+
+                    toggle( contact_form   );
+                    toggle( contact_status );
+
+                    contact_button.disabled = false;
+
+                }, function(error) {
+                    console.log('FAILED...', error);
+
+                    toggle( contact_form   );
+                    toggle( contact_status ); 
+
+                    contact_button.disabled = false;
+                });
+            });
+
+        } else {
+            console.log(' > ERR: Form not found');
+        }
+    } 
+
     /*
     Map Settings
 
