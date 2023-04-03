@@ -5,7 +5,8 @@
 <!-- Main JS File -->
 <script src="@@path/assets/js/main.min.js"></script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key="></script>
+<script src="@@path/assets/vendor/jquery.gmap/jquery.gmap.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCR_WTpY0r-VqBoBPfVUALpum7K_n55rXI"></script>
 <script>
 
     // Show an element
@@ -78,14 +79,14 @@
 
     // Map Markers
     var mapMarkers = [ {
-        address: "New York, NY 10017",
-        html: "<strong>New York Office<\/strong><br>New York, NY 10017",
+        address: "VIVO Mall, Cluj",
+        html: "<strong>CharismaMedia<\/strong><br>Panou LED VIVO Mall",
         popup: true
     } ];
 
     // Map Initial Location
-    var initLatitude = 40.75198;
-    var initLongitude = -73.96978;
+    var initLatitude = 46.750219798902506;
+    var initLongitude = 23.5337395200862;
 
     // Map Extended Settings
     var mapSettings = {
@@ -102,7 +103,7 @@
         markers: mapMarkers,
         latitude: initLatitude,
         longitude: initLongitude,
-        zoom: 11
+        zoom: 15
     };
 
     var map = $( '#googlemaps' ).gMap( mapSettings );

@@ -1,0 +1,58 @@
+<!-- Plugins JS File -->
+<script src="@@path/assets/vendor/jquery/jquery.min.js"></script>
+<script src="@@path/assets/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="@@path/assets/vendor/owl-carousel/owl.carousel.min.js"></script>
+<!-- Main JS File -->
+<script src="@@path/assets/js/main.js"></script>
+
+<script src="@@path/assets/vendor/jquery.gmap/jquery.gmap.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCR_WTpY0r-VqBoBPfVUALpum7K_n55rXI"></script>
+<script>
+
+    /*
+    Map Settings
+
+        Find the Latitude and Longitude of your address:
+            - https://www.latlong.net/
+            - http://www.findlatitudeandlongitude.com/find-address-from-latitude-and-longitude/
+
+    */
+
+    // Map Markers
+    var mapMarkers = [ {
+        address: "E68 Intersectie, Fagaras",
+        html: "<strong>CharismaMedia<\/strong><br>Panou LED E68 Intersectie, Fagaras",
+        popup: true
+    } ];
+
+    // Map Initial Location
+    var initLatitude = 45.8425788697317;
+    var initLongitude = 24.972040881236293;
+
+    // Map Extended Settings
+    var mapSettings = {
+        controls: {
+            draggable: !window.Riode.isMobile,
+            panControl: true,
+            zoomControl: true,
+            mapTypeControl: true,
+            scaleControl: true,
+            streetViewControl: true,
+            overviewMapControl: true
+        },
+        scrollwheel: false,
+        markers: mapMarkers,
+        latitude: initLatitude,
+        longitude: initLongitude,
+        zoom: 15
+    };
+
+    var map = $( '#googlemaps' ).gMap( mapSettings );
+
+    // Map text-center At
+    var mapCenterAt = function ( options, e ) {
+        e.preventDefault();
+        $( '#googlemaps' ).gMap( "centerAt", options );
+    }
+
+</script>
