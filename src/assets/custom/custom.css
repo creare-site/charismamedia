@@ -9,3 +9,8 @@
 .feature-images>.feature3:after {
     content: "Media" !important;
 }
+
+.feature-images>.feature4:after {
+    content: "Digital" !important;
+    color: black !important;
+}

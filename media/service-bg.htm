@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Docusaurus">
+    <title>AppSeed</title>
+    <link rel="search" type="application/opensearchdescription+xml" title="AppSeed" href="/opensearch.xml">
+
+
+<script src="//cdn.jsdelivr.net/gh/app-generator/sticky-media@0.0.19/dist/index.min.js" id="stickyVideoScript" defer class="sticky-popup"></script>
+    <script defer src="/runtime~main.js"></script><script defer src="/main.js"></script><link href="/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <script>
+(function() {
+  var defaultMode = 'light';
+  var respectPrefersColorScheme = false;
+
+  function setDataThemeAttribute(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+  }
+
+  function getQueryStringTheme() {
+    var theme = null;
+    try {
+      theme = new URLSearchParams(window.location.search).get('docusaurus-theme')
+    } catch(e) {}
+    return theme;
+  }
+
+  function getStoredTheme() {
+    var theme = null;
+    try {
+      theme = localStorage.getItem('theme');
+    } catch (err) {}
+    return theme;
+  }
+
+  var initialTheme = getQueryStringTheme() || getStoredTheme();
+  if (initialTheme !== null) {
+    setDataThemeAttribute(initialTheme);
+  } else {
+    if (
+      respectPrefersColorScheme &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches
+    ) {
+      setDataThemeAttribute('dark');
+    } else if (
+      respectPrefersColorScheme &&
+      window.matchMedia('(prefers-color-scheme: light)').matches
+    ) {
+      setDataThemeAttribute('light');
+    } else {
+      setDataThemeAttribute(defaultMode === 'dark' ? 'dark' : 'light');
+    }
+  }
+})();
+
+(function() {
+  function isDismissed() {
+    try {
+      return localStorage.getItem('docusaurus.announcement.dismiss') === 'true';
+    } catch (err) {}
+    return false;
+  }
+  document.documentElement.setAttribute('data-announcement-bar-initially-dismissed', isDismissed());
+})();
+            </script>
+    <div id="__docusaurus"></div>
+    
+    
+  </body>
+</html>
